@@ -1,0 +1,89 @@
+import pygame
+import random
+import os
+
+r = (1, 2, 3, 4, 5, 6)
+# random.randint(1,6)
+white = (255, 255, 255)
+black = (0, 0, 0)
+red = (255, 0, 0)
+gw = pygame.display.set_mode((300, 300))
+pygame.display.set_caption("dice roll")
+
+clock = pygame.time.Clock()
+exit_game = False
+end_game = False
+
+gw.fill(white)
+while exit_game==False:
+    for event in pygame.event.get():
+        #print(event)
+
+
+        if event.type==pygame.QUIT:
+          exit_game=True
+
+        if event.type == pygame.KEYDOWN:
+            event.key == pygame.K_SPACE
+
+            r = random.randint(1,6)
+
+            if r == 1:
+              pygame.draw.rect(gw, black, [78, 68, 150, 150])
+              pygame.draw.rect(gw, red, [139,128, 15, 15])
+
+
+
+            elif r == 2:
+              pygame.draw.rect(gw, black, [78, 68, 150, 150])
+              pygame.draw.rect(gw, red, [146,105, 15, 15])
+              pygame.draw.rect(gw, red, [145,171, 15, 15])
+
+            elif r == 3:
+              pygame.draw.rect(gw, black, [78,68, 150, 150])
+              pygame.draw.rect(gw, red, [105,101, 15 , 15])
+              pygame.draw.rect(gw, red, [139,128,  15, 15])
+              pygame.draw.rect(gw, red, [185,167,15, 15])
+
+            elif r == 4:
+              pygame.draw.rect(gw, black, [78, 68, 150, 150])
+              pygame.draw.rect(gw, red, [104,101, 15, 15])
+              pygame.draw.rect(gw, red, [181,97, 15, 15])
+              pygame.draw.rect(gw, red, [103,173, 15, 15])
+              pygame.draw.rect(gw, red, [185,167, 15, 15])
+
+            elif r == 5:
+              pygame.draw.rect(gw, black, [78, 68, 150, 150])
+              pygame.draw.rect(gw, red, [104, 101, 15, 15])
+              pygame.draw.rect(gw, red, [181, 97, 15, 15])
+              pygame.draw.rect(gw, red, [146,139,15,15])
+              pygame.draw.rect(gw, red, [103, 173, 15, 15])
+              pygame.draw.rect(gw, red, [185, 167, 15, 15])
+
+
+            elif r == 6:
+                pygame.draw.rect(gw, black, [78, 68, 150, 150])
+                pygame.draw.rect(gw, red, [104, 101, 15, 15])
+                pygame.draw.rect(gw, red, [181, 97, 15, 15])
+                pygame.draw.rect(gw, red, [100,134, 15, 15])
+                pygame.draw.rect(gw, red, [188,135, 15, 15])
+                pygame.draw.rect(gw, red, [103, 173, 15, 15])
+                pygame.draw.rect(gw, red, [185, 167, 15, 15])
+
+
+
+    """bgimg=pygame.image.load('Bugatti La Voiture Noire.jpg')
+                print(bgimg)
+    bgimg=pygame.transform.scale(bgimg,(900,850))
+    gw.blit(bgimg,(0,0))
+    pygame.draw.rect(gw,black,[638,642,150,150])
+    pygame.draw.rect(gw,red,[663,670,15,15])
+    pygame.draw.rect(gw,red,[741,671,15,15])
+    pygame.draw.rect(gw,red,[700,760,15,15])
+    """
+
+    pygame.display.update()
+    clock.tick(30)
+
+pygame.quit()
+quit()
